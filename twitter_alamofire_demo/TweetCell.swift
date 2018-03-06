@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class TweetCell: UITableViewCell {
     
     @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var screen_nameLabel: UILabel!
+    @IBOutlet weak var createdAtLabel: UILabel!
+    @IBOutlet weak var retweetCountLabel: UILabel!
+    @IBOutlet weak var favoriteCountLabel: UILabel!
     
     var tweet: Tweet! {
         didSet {
             tweetTextLabel.text = tweet.text
+            retweetCountLabel.text = String(describing: tweet.retweetCount)
+            favoriteCountLabel.text = String(describing: tweet.favoriteCount)
+            nameLabel.text = tweet.user.name
+            screen_nameLabel.text = tweet.user.screenName
+            createdAtLabel.text = tweet.createdAtString
+//            profileImage.af_setImage(withURL: tweet.user.profileImageURLHTTPS)
         }
     }
     
