@@ -27,7 +27,7 @@ class TweetCell: UITableViewCell {
             nameLabel.text = tweet.user.name
             screen_nameLabel.text = tweet.user.screenName
             createdAtLabel.text = tweet.createdAtString
-//            profileImage.af_setImage(withURL: tweet.user.profileImageURLHTTPS)
+            profileImage.af_setImage(withURL: tweet.user.profileImageURLHTTPS!)
         }
     }
     
